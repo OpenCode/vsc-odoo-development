@@ -2,7 +2,12 @@
 	"name": "vsc-odoo-development",
 	"displayName": "vsc-odoo-development",
 	"description": "Tools for develepers of Odoo core and modules",
+	"publisher": "scapigliato",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/OpenCode/vsc-odoo-development.git"
+	},
 	"engines": {
 		"vscode": "^1.43.0"
 	},
