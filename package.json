@@ -1,9 +1,19 @@
 {
 	"name": "vsc-odoo-development",
-	"displayName": "vsc-odoo-development",
+	"displayName": "Odoo Development",
 	"description": "Tools for develepers of Odoo core and modules",
 	"publisher": "scapigliato",
-	"version": "0.0.1",
+	"version": "0.2.0",
+	"license": "LGPL-3.0-or-later",
+	"author": {
+		"name": "Francesco Apruzzese"
+	},
+	"galleryBanner": {
+		"color": "#875A7B"
+	},
+	"bugs": {
+		"url": "https://github.com/OpenCode/vsc-odoo-development/issues"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/OpenCode/vsc-odoo-development.git"
@@ -12,10 +22,15 @@
 		"vscode": "^1.43.0"
 	},
 	"categories": [
-		"Other"
+		"Extension Packs", "Other"
 	],
+	"keywords": [
+		"odoo", "openerp", "python", "xml", "module"
+	],
+	"icon": "readme/icon.png",
 	"activationEvents": [
-		"onCommand:extension.dev.odoo.create.security.rule"
+		"onCommand:extension.dev.odoo.create.security.rule",
+		"onCommand:extension.dev.odoo.model.from.remote"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -23,8 +38,43 @@
 			{
 				"command": "extension.dev.odoo.create.security.rule",
 				"title": "Odoo Dev - Create Security Rule"
+			},
+			{
+				"command": "extension.dev.odoo.model.from.remote",
+				"title": "Odoo Dev - Model From Remote"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Odoo Dev",
+			"properties": {
+				"odoo.dev.OdooRemoteUrl": {
+					"type": "string",
+					"default": "http://localhost",
+					"description": "Remote (or local) Odoo host url"
+				},
+				"odoo.dev.OdooRemotePort": {
+					"type": "string",
+					"default": "8069",
+					"description": "Remote (or local) Odoo host port"
+				},
+				"odoo.dev.OdooRemoteUser": {
+					"type": "string",
+					"default": "admin",
+					"description": "Odoo username"
+				},
+				"odoo.dev.OdooRemotePassword": {
+					"type": "string",
+					"default": "admin",
+					"description": "Odoo user password"
+				},
+				"odoo.dev.OdooRemoteDb": {
+					"type": "string",
+					"default": "demo",
+					"description": "Odoo database"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -39,12 +89,16 @@
 		"@types/mocha": "^7.0.1",
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.43.0",
-		"eslint": "^6.8.0",
-		"@typescript-eslint/parser": "^2.18.0",
 		"@typescript-eslint/eslint-plugin": "^2.18.0",
+		"@typescript-eslint/parser": "^2.18.0",
+		"eslint": "^6.8.0",
 		"glob": "^7.1.6",
 		"mocha": "^7.0.1",
 		"typescript": "^3.7.5",
-		"vscode-test": "^1.3.0"
+		"vscode-test": "^1.3.0",
+		"odoo-xmlrpc": "^1.0.8"
+	},
+	"dependencies": {
+		"odoo-xmlrpc": "^1.0.8"
 	}
 }
