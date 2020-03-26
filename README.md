@@ -21,3 +21,7 @@ In Visual Studio Code settings define Odoo connection informations
 ### Use
 
 ![odoo dev - model remote](readme/odoo_dev_model_remote.gif "Odoo Dev - Model From Remote")
+
+# Support
+
+<a href="https://www.buymeacoffee.com/scapigliato" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
